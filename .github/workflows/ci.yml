@@ -1,0 +1,19 @@
+name: Testes de Algoritmos e Estruturas de Dados I
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  compilacao-e-testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@v4
+      - name: Mostrar versao do compilador
+        run: gcc --version
+      - name: Compilar e executar testes das Listas 1 a 4
+        run: make test
