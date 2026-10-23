@@ -51,7 +51,8 @@ done
 "$TMP/test_personagem" > "$TMP/personagem"
 printf '%s\n' 'Teste: vida=100, ataque=20, vivo=sim' \
   'Teste: vida=0, ataque=20, vivo=nao' 'Teste: vida=20, ataque=20, vivo=sim' \
-  'Teste: vida=100, ataque=20, vivo=sim' 'TESTES_PERSONAGEM_OK' > "$TMP/personagem_esperado"
+  'Teste: vida=100, ataque=20, vivo=sim' 'Teste: vida=80, ataque=20, vivo=sim' \
+  'TESTES_PERSONAGEM_OK' > "$TMP/personagem_esperado"
 diff "$TMP/personagem_esperado" "$TMP/personagem"
 
 printf '%s\n' 'TODOS OS TESTES PASSARAM.'

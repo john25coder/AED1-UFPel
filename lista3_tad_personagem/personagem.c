@@ -24,7 +24,7 @@ Personagem *personagem_cria(char *nome) {
 int personagem_vivo(Personagem *p) { return p != NULL && p->vida > 0; }
 
 void personagem_atacar(Personagem *atacante, Personagem *alvo) {
-    if (!personagem_vivo(atacante) || !personagem_vivo(alvo)) return;
+    if (!atacante || !alvo) return;
     alvo->vida -= atacante->ataque;
     if (alvo->vida < 0) alvo->vida = 0;
 }

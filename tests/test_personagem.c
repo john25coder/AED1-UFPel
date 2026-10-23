@@ -18,6 +18,10 @@ int main(void) {
     personagem_status(alvo);
     for (int i = 0; i < 10; i++) personagem_curar(alvo);
     personagem_status(alvo);
+    for (int i = 0; i < 5; i++) personagem_atacar(alvo, atacante);
+    assert(!personagem_vivo(atacante));
+    personagem_atacar(atacante, alvo);
+    personagem_status(alvo); /* sem restricao adicional nao pedida no enunciado */
     personagem_curar(NULL);
     personagem_libera(alvo);
     personagem_libera(atacante);

@@ -48,7 +48,7 @@ cd ../lista4_listas_encadeadas && make test && make clean
 
 Repositório privado: [john25coder/AED1-UFPel](https://github.com/john25coder/AED1-UFPel).
 
-Os cinco commits originais do pacote são preservados: quatro correspondem às Listas 1 a 4 e o quinto acrescenta a integração contínua. Um novo commit registra a revisão dos enunciados e seus testes, sem reescrever os anteriores. Para enviar alterações com acesso autorizado:
+Os cinco commits originais do pacote são preservados: quatro correspondem às Listas 1 a 4 e o quinto acrescenta a integração contínua. Commits adicionais registram a revisão dos enunciados e seus testes, sem reescrever os anteriores. Para enviar alterações com acesso autorizado:
 
 ```sh
 git remote -v
