@@ -1,0 +1,13 @@
+# Binarios e arquivos gerados
+*.o
+*.exe
+*.out
+*.a
+*.so
+*.dSYM/
+build/
+programa
+main
+*.gcda
+*.gcno
+.DS_Store
