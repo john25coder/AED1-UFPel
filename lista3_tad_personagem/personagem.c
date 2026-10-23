@@ -30,7 +30,7 @@ void personagem_atacar(Personagem *atacante, Personagem *alvo) {
 }
 
 void personagem_curar(Personagem *p) {
-    if (!personagem_vivo(p)) return;
+    if (!p) return;
     /* O enunciado nao determina o valor da cura: foi adotado +20. */
     p->vida += 20;
     if (p->vida > 100) p->vida = 100;

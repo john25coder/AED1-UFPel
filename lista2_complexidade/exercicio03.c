@@ -2,7 +2,10 @@
 #include <stdlib.h>
 
 /* a) Tempo O(1), espaco O(1). Assume i valido. */
-int elemento(const int v[], int i) { return v[i]; }
+int elemento(const int v[], int n, int i) {
+    if (!v || i < 0 || i >= n) return 0;
+    return v[i];
+}
 
 /* b) Tempo O(n), espaco O(1). Assume n > 0. */
 int maior(const int v[], int n) {
@@ -90,7 +93,7 @@ int **multiplicar(int **A, int **B, int n) {
 int main(void) {
     int v[] = {3, 8, 5, 2};
     int B[] = {10, 20};
-    printf("a) Elemento 2: %d\n", elemento(v, 2));
+    printf("a) Elemento 2: %d\n", elemento(v, 4, 2));
     printf("b) Maior: %d\n", maior(v, 4));
     trocar_metades(v, 4);
     printf("c) Metades trocadas: %d %d %d %d\n", v[0], v[1], v[2], v[3]);

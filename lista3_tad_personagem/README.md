@@ -8,4 +8,4 @@ make
 make clean
 ```
 
-O enunciado define os limites da cura, mas não a quantidade restaurada; foi adotado **+20 pontos** e cura apenas para personagens vivos. O ataque de personagem morto é ignorado.
+O enunciado define os limites da cura, mas não a quantidade restaurada; foi adotado **+20 pontos**, inclusive quando a vida é zero, sem ultrapassar 100. O ataque de personagem morto é ignorado.

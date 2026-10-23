@@ -60,6 +60,21 @@ int main(void) {
     const int pPar[] = {8,9,11,20};
     verificar(posImp, pImp, 4); verificar(posPar, pPar, 4);
     assert(listaVazia(l));
+
+    intercalarListas(l, outro); /* ambas vazias */
+    assert(listaVazia(l) && listaVazia(outro));
+    const int valores[] = {2,4,6}; preencher(outro, valores, 3);
+    intercalarListas(l, outro); /* primeira vazia */
+    verificar(l, valores, 3); assert(listaVazia(outro));
+    inverterPrimeirosN(l, 1); verificar(l, valores, 3);
+    inverterPrimeirosN(l, 3);
+    const int todosInvertidos[] = {6,4,2}; verificar(l, todosInvertidos, 3);
+    removerPares(l); assert(listaVazia(l));
+    inserirFinal(l, (Info){1});
+    const int segundaMaior[] = {2,3,4}; preencher(outro, segundaMaior, 3);
+    intercalarListas(l, outro);
+    const int resultadoMaior[] = {1,2,3,4}; verificar(l, resultadoMaior, 4);
+    assert(listaVazia(outro));
     printf("Todas as verificacoes da lista simplesmente encadeada passaram.\n");
     printf("Posicoes impares: "); imprimirLista(posImp);
     printf("Posicoes pares: "); imprimirLista(posPar);

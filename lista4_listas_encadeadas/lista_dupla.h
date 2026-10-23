@@ -12,7 +12,12 @@ typedef struct {
 } ListaDupla;
 
 ListaDupla *duplaCriar(void);
+int duplaVazia(const ListaDupla *lista);
+void duplaInserirInicio(ListaDupla *lista, int valor);
 void duplaInserirFinal(ListaDupla *lista, int valor);
+int duplaRemoverInicio(ListaDupla *lista);
+int duplaRemoverFinal(ListaDupla *lista);
+int duplaBuscar(const ListaDupla *lista, int valor, int *resultado);
 int duplaRemoverPrimeiraOcorrencia(ListaDupla *lista, int valor);
 int duplaPalindromo(const ListaDupla *lista);
 void duplaImprimir(const ListaDupla *lista);

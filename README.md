@@ -25,7 +25,9 @@ Requer GCC e `make` em ambiente Linux/macOS (ou adaptado para Windows).
 make test
 ```
 
-O teste compila os arquivos C com `-Wall -Wextra -Wpedantic -Werror`, executa os programas de exemplo e valida saídas selecionadas. Também há um workflow de GitHub Actions em `.github/workflows/ci.yml` para executar `make test` a cada push ou pull request. **Esses testes não substituem avaliação com entradas adversas, análise de memória ou revisão do professor.**
+O teste compila os arquivos C com `-Wall -Wextra -Wpedantic -Werror`, executa os programas de exemplo e os testes de regressão em `tests/`. Verifica também cópias independentes, remoções inválidas, esvaziamento do vetor, operações nas duas extremidades das listas e cura com vida zero e limite de 100.
+
+O workflow `.github/workflows/ci.yml` executa `make test` no Linux a cada push ou pull request, primeiro com compilação rigorosa e depois com AddressSanitizer e UndefinedBehaviorSanitizer, incluindo detecção de vazamentos. **A cobertura desses casos não constitui uma prova de ausência de erros para todas as entradas.**
 
 Para executar as listas 3 e 4 manualmente:
 
@@ -44,7 +46,9 @@ cd ../lista4_listas_encadeadas && make test && make clean
 
 ## Publicação no GitHub
 
-Os quatro primeiros commits locais correspondem às Listas 1 a 4. Um quinto commit acrescenta a integração contínua e a documentação para publicação. O remoto `origin` já está configurado para `john25coder/AED1-UFPel`, mas **o repositório remoto precisa ser criado e o envio requer autenticação**. Após criar um repositório vazio com esse nome, execute:
+Repositório privado: [john25coder/AED1-UFPel](https://github.com/john25coder/AED1-UFPel).
+
+Os cinco commits originais do pacote são preservados: quatro correspondem às Listas 1 a 4 e o quinto acrescenta a integração contínua. Um novo commit registra a revisão dos enunciados e seus testes, sem reescrever os anteriores. Para enviar alterações com acesso autorizado:
 
 ```sh
 git remote -v

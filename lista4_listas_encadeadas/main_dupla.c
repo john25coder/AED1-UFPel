@@ -4,6 +4,26 @@
 
 int main(void) {
     ListaDupla *l = duplaCriar();
+    assert(duplaVazia(l));
+    assert(!duplaRemoverInicio(l));
+    assert(!duplaRemoverFinal(l));
+    duplaInserirFinal(l, 20);
+    duplaInserirInicio(l, 10);
+    duplaInserirFinal(l, 30);
+    int encontrado = 0;
+    assert(duplaBuscar(l, 20, &encontrado) && encontrado == 20);
+    assert(!duplaBuscar(l, 99, NULL));
+    assert(duplaRemoverInicio(l));
+    assert(!duplaBuscar(l, 10, NULL));
+    assert(duplaRemoverFinal(l));
+    assert(!duplaBuscar(l, 30, NULL));
+    assert(duplaBuscar(l, 20, NULL));
+    assert(duplaPalindromo(l));
+    assert(duplaRemoverFinal(l));
+    assert(duplaVazia(l));
+    duplaInserirInicio(l, 42);
+    assert(duplaRemoverInicio(l));
+    assert(duplaVazia(l));
     assert(duplaPalindromo(l));
     assert(!duplaRemoverPrimeiraOcorrencia(l, 99));
     int v[] = {10,20,30,20,10};

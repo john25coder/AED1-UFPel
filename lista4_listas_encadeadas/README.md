@@ -3,6 +3,7 @@
 - Exercício 1: interface `lista.h`, implementação `lista.c`, demonstração/testes `main.c`.
 - Exercícios 2 a 11: funções adicionais documentadas em `lista.h`, testadas pelo `main.c`.
 - Exercícios 12 a 14: variante `lista_dupla.h`, `lista_dupla.c` e `main_dupla.c`.
+- A variante dupla mantém criação, consulta de lista vazia, inserção e remoção nas duas extremidades, busca, impressão e liberação. Os nomes usam o prefixo `dupla` para distinguir as duas interfaces.
 - `incorporar`, `intercalarListas` e `separarPosicoes` **transferem os nós existentes** entre listas; não fazem cópias.
 - `copiarLista` aloca nós independentes. A separação exige listas de destino vazias.
 - As funções de inversão fazem apenas religação de ponteiros.

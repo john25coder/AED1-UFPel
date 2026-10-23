@@ -8,6 +8,18 @@ ListaDupla *duplaCriar(void) {
     l->inicio = l->fim = NULL;
     return l;
 }
+int duplaVazia(const ListaDupla *l) { return !l || !l->inicio; }
+void duplaInserirInicio(ListaDupla *l, int valor) {
+    if (!l) return;
+    NodoDuplo *novo = malloc(sizeof *novo);
+    if (!novo) { fputs("Erro de alocacao\n", stderr); exit(EXIT_FAILURE); }
+    novo->valor = valor;
+    novo->ant = NULL;
+    novo->prox = l->inicio;
+    if (l->inicio) l->inicio->ant = novo;
+    else l->fim = novo;
+    l->inicio = novo;
+}
 void duplaInserirFinal(ListaDupla *l, int valor) {
     if (!l) return;
     NodoDuplo *novo = malloc(sizeof *novo);
@@ -18,6 +30,34 @@ void duplaInserirFinal(ListaDupla *l, int valor) {
     if (l->fim) l->fim->prox = novo;
     else l->inicio = novo;
     l->fim = novo;
+}
+int duplaRemoverInicio(ListaDupla *l) {
+    if (duplaVazia(l)) return 0;
+    NodoDuplo *removido = l->inicio;
+    l->inicio = removido->prox;
+    if (l->inicio) l->inicio->ant = NULL;
+    else l->fim = NULL;
+    free(removido);
+    return 1;
+}
+int duplaRemoverFinal(ListaDupla *l) {
+    if (duplaVazia(l)) return 0;
+    NodoDuplo *removido = l->fim;
+    l->fim = removido->ant;
+    if (l->fim) l->fim->prox = NULL;
+    else l->inicio = NULL;
+    free(removido);
+    return 1;
+}
+int duplaBuscar(const ListaDupla *l, int valor, int *resultado) {
+    if (!l) return 0;
+    for (NodoDuplo *p = l->inicio; p; p = p->prox) {
+        if (p->valor == valor) {
+            if (resultado) *resultado = p->valor;
+            return 1;
+        }
+    }
+    return 0;
 }
 /* Exercicios 12 e 13: trata remocao da cabeca, cauda e meio. */
 int duplaRemoverPrimeiraOcorrencia(ListaDupla *l, int valor) {
