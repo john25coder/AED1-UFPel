@@ -3,7 +3,7 @@
 **João Victor Rutz Crespo** — 22103178
 Engenharia da Computação | UFPel
 
-Resoluções das listas de AED I, desenvolvidas em C.
+Resoluções das sete listas de AED I, desenvolvidas em C.
 
 ## Listas
 
@@ -11,6 +11,8 @@ Resoluções das listas de AED I, desenvolvidas em C.
 - [Lista 2 — Complexidade](lista2_complexidade/)
 - [Lista 3 — TAD Personagem](lista3_tad_personagem/)
 - [Lista 4 — Listas encadeadas](lista4_listas_encadeadas/)
+- [Lista 5 — Pilhas](lista5_pilhas/)
+- [Lista 6 — Filas](lista6_filas/)
 - [Lista 7 — Árvores binárias](lista7_arvores/)
 
 ## Compilar e testar
