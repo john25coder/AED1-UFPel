@@ -1,4 +1,4 @@
-# Binarios e arquivos gerados
+# Arquivos gerados pela compilacao
 *.o
 *.exe
 *.out
@@ -11,3 +11,5 @@ main
 *.gcda
 *.gcno
 .DS_Store
+lista7_arvores/tests/testar_arvore
+lista7_arvores/tests/ultima_saida.txt

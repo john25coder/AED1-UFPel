@@ -1,4 +1,4 @@
-name: Testes de Algoritmos e Estruturas de Dados I
+name: Testes AED I
 
 on:
   push:
@@ -8,16 +8,13 @@ permissions:
   contents: read
 
 jobs:
-  compilacao-e-testes:
+  testes:
     runs-on: ubuntu-latest
     steps:
-      - name: Obter codigo
-        uses: actions/checkout@v4
-      - name: Mostrar versao do compilador
-        run: gcc --version
-      - name: Compilar e executar testes das Listas 1 a 4
+      - uses: actions/checkout@v4
+      - name: Compilar e testar
         run: make test
-      - name: Verificar acessos invalidos e vazamentos de memoria
+      - name: Testar memoria
         env:
           ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
           UBSAN_OPTIONS: halt_on_error=1
